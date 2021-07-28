@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="wrapper">
+	<h2>Registration From</h2>
+
+	<div id="error_message" ></div>
+	<form id="myform" onsubmit="return validation()">
+		<div class="input_field">
+			<input type="text" placeholder="Name" id="name">
+		</div>
+		<div class="input_field">
+			<input type="text" placeholder="Age" id="age">
+		</div>
+		<div class="input_field">
+			<input type="text" placeholder="Father Name" id="father">
+		</div>
+		<div class="input_field">
+			<input type="text" placeholder="Mother Name" id="mother">
+		</div>
+
+		<div class="input_field">
+			<input type="text" placeholder="Subject" id="subject">
+		</div>
+		<div class="input_field">
+			<input type="text" placeholder="Phone" id="phone">
+		</div>
+		<div class="input_field">
+			<input type="text" placeholder="email" id="email">
+		</div>
+<!-- 		<div class="input_field">
+			<textarea id="message" placeholder="message"></textarea>
+		</div>	 -->
+		<div class="btn">
+			<input type="submit" name="">
+			
+		</div>	
+
+
+
+
+	</form>
+</div>
+
+<script type="text/javascript">
+	function validation(){
+		var name=document.getElementById('name').value
+		var age=document.getElementById('age').value
+		var father=document.getElementById('father').value
+		var mother=document.getElementById('mother').value
+		var subject=document.getElementById('subject').value
+		var phone=document.getElementById('phone').value
+		var email=document.getElementById('email').value
+		//var message=document.getElementById('message').value
+		var error_message =document.getElementById("error_message")
+		
+		
+		var text
+
+		error_message.style.padding ="10px";
+		;
+
+
+		if (name.length <5) {
+			text ="Please Enter Valid Name"
+			error_message.innerHTML =text;
+			return false;
+
+		}
+		if (age==""){
+			text ="Enter Your Age"
+			error_message.innerHTML =text;
+			return false;
+
+		}
+		else if(age<18){
+			text ="You Are Not Eligible for Apply this form"
+			error_message.innerHTML =text;
+			return false;
+
+
+		}
+		if (father==""){
+			text ="Enter Father Name"
+			error_message.innerHTML =text;
+			return false;
+
+		}
+		if (mother==""){
+			text ="Enter Mother Name"
+			error_message.innerHTML =text;
+			return false;
+
+		}				
+		if (subject.length < 4) {
+			text ="Please Enter  subject"
+			error_message.innerHTML =text;
+			return false;
+
+		}	
+		if (isNaN(phone) || phone.length !=10) {
+			text ="Please Enter Valid Phone number"
+			error_message.innerHTML =text;
+			return false;
+
+		}	
+		if (email.indexOf("@") == -1 || email.length<6) {
+			text ="Please Enter Valid Email"
+			error_message.innerHTML =text;
+			return false;
+
+		}	
+		// if (message.length <= 140){
+		// 	text ="Please Enter more than 140 characters"
+		// 	error_message.innerHTML =text;
+		// 	return false;
+
+		// }
+
+		alert("Form submitted Successfully")	
+		
+		return true
+
+	}
+
+
+	// }
+	// // 	error_message.style.padding ="10px"
+	// 	if (name.length <5) {
+	// 		text ="Please Enter valid name"
+	// 		error_message.innerHTML = text;
+	// 		return false;
+
+	// 	}
+	// 	return false;
+		
+	// }
+	
+
+
+
+</script>
+
+</body>
+</html>
